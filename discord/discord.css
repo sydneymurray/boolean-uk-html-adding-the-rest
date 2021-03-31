@@ -1,0 +1,79 @@
+body {
+  background: rgb(77, 77, 77);
+}
+* {
+  margin: 0;
+  padding-left: 0;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+}
+.discord {
+  display: grid;
+  grid-template:
+    "icons channel menu menu" 40px
+    "icons channel main chat" 1fr
+    "icons status texting chat" 40px /
+    40px 160px 1fr 160px;
+  width: 100vw;
+  height: 100vh;
+}
+.icons {
+  grid-area: icons;
+  background-color: #ff000050;
+  /*writing-mode: sideways-rl;*/
+}
+
+.channel {
+  grid-area: channel;
+  background-color: #0000ff50;
+}
+.menu {
+  grid-area: menu;
+  background-color: #77007750;
+}
+.chat {
+  grid-area: chat;
+  background-color: #10abe950;
+}
+.status {
+  grid-area: status;
+  background-color: #e98b10fa;
+}
+.texting {
+  grid-area: texting;
+  background-color: #c319eefa;
+  writing-mode: sideways-rl;
+}
+.main {
+  grid-area: main;
+  background-color: #104ae9fa;
+}
+@media screen and (max-width: 800px) {
+  .discord {
+    grid-template:
+      "channel menu" 40px
+      "channel main" 1fr
+      "status texting" 40px /
+      160px 1fr;
+  }
+  .chat,
+  .icons {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .discord {
+    grid-template:
+      "menu" 40px
+      "main" 1fr
+      "texting" 40px /
+      1fr;
+  }
+  .chat,
+  .icons,
+  .channel,
+  .status {
+    display: none;
+  }
+}

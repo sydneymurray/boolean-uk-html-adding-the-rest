@@ -1,0 +1,109 @@
+body {
+  background: rgb(77, 77, 77);
+}
+* {
+  margin: 0;
+  padding-left: 0;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+}
+.gmail {
+  display: grid;
+  grid-template:
+    "menu menu menu menu" 40px
+    "mailboxes main settings iconbar" 1fr
+    "meetings main theme iconbar" 1fr
+    "chat main inboxtype iconbar" 1fr /
+    200px 1fr 200px 40px;
+  width: 100vw;
+  height: 100vh;
+}
+.menu {
+  grid-area: menu;
+  background-color: #ff000050;
+}
+.settings {
+  grid-area: settings;
+  background-color: #0000ff50;
+}
+.main {
+  grid-area: main;
+  background-color: #77007750;
+}
+.mailboxes {
+  grid-area: mailboxes;
+  background-color: #10abe950;
+}
+.iconbar {
+  grid-area: iconbar;
+  background-color: #e98b10fa;
+  /*writing-mode: sideways-rl;*/
+  writing-mode: vertical;
+  text-orientation: sideways;
+}
+.chat {
+  grid-area: chat;
+  background-color: #0a42fafa;
+}
+.inboxtype {
+  grid-area: inboxtype;
+  background-color: #1031e9fa;
+}
+.theme {
+  grid-area: theme;
+  background-color: #17e910fa;
+}
+
+@media screen and (max-width: 900px) {
+  .gmail {
+    grid-template:
+      "menu menu menu" 40px
+      "mailboxes main  iconbar" 1fr
+      "meetings main iconbar" 1fr
+      "chat main  iconbar" 1fr /
+      200px 1fr 40px;
+  }
+  .settings,
+  .theme,
+  .inboxtype {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .gmail {
+    grid-template:
+      "menu menu" 40px
+      "main iconbar" 1fr
+      "main iconbar" 1fr
+      "main iconbar" 1fr /
+      1fr 40px;
+  }
+  .settings,
+  .theme,
+  .inboxtype,
+  .meetings,
+  .mailboxes,
+  .chat {
+    display: none;
+  }
+}
+@media screen and (max-width: 400px) {
+  .gmail {
+    grid-template:
+      "menu" 40px
+      "main" 1fr
+      "main" 1fr
+      "main" 1fr /
+      1fr;
+  }
+  .settings,
+  .theme,
+  .inboxtype,
+  .meetings,
+  .mailboxes,
+  .chat,
+  .iconbar {
+    display: none;
+  }
+}

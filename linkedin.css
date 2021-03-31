@@ -1,0 +1,26 @@
+
+body{
+  background: rgb(158, 158, 250);
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.linkedin{
+  display: grid;
+    grid-template:
+    "top-left top top-right" 50px
+    "mid-left middle mid-right" 1fr
+    "bottom-left bottom-mid bottom-right" 50px /
+    100px 1fr 100px;
+}
+.top-left{
+  background-color: #ff000050;
+}
+
+
+ 
+
+
+}
